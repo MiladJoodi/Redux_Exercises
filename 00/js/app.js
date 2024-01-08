@@ -4,6 +4,8 @@ import {
   counterSetZero,
 } from "../Redux/actionsTypes.js";
 
+import { incrementAction,decrementAction,setZeroAction } from "../Redux/actionCreator.js";
+
 const decBtn = document.querySelector(".dec");
 const resetBtn = document.querySelector(".reset");
 const incBtn = document.querySelector(".inc");
@@ -34,19 +36,19 @@ const store = Redux.createStore(counterReducer);
 // Handle Events
 
 decBtn.addEventListener("click", () => {
-  store.dispatch({ type: counterDecrement });
+  store.dispatch(decrementAction());
   let newValue = store.getState();
   numberElem.innerHTML = newValue;
 });
 
 resetBtn.addEventListener("click", () => {
-  store.dispatch({ type: counterSetZero });
+  store.dispatch(setZeroAction());
   let newValue = store.getState();
   numberElem.innerHTML = newValue;
 });
 
 incBtn.addEventListener("click", () => {
-  store.dispatch({ type: counterIncrement });
+  store.dispatch(incrementAction());
   let newValue = store.getState();
   numberElem.innerHTML = newValue;
 });
