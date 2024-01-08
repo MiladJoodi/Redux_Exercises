@@ -14,7 +14,7 @@ const counterReducer = (state = 0, action) => {
         }
         case 'SET_ZERO': {
             // return 0
-            return store - store
+            return state - state
         }
         default: {
             return state
@@ -31,10 +31,12 @@ decBtn.addEventListener('click', () => {
     numberElem.innerHTML = newValue
 })
 resetBtn.addEventListener('click', () => {
-    store.dispatch({type: 'DECREMENT'})
-        let newValue = store.getState()
+    store.dispatch({type: 'SET_ZERO'})
+    let newValue = store.getState()
+    numberElem.innerHTML = newValue
 })
 incBtn.addEventListener('click', () => {
-    store.dispatch({type: 'DECREMENT'})
-        numberElem.innerHTML = newValue
+    store.dispatch({type: 'INCREMENT'})
+    let newValue = store.getState()
+    numberElem.innerHTML = newValue
 })
