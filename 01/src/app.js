@@ -42,3 +42,10 @@ function todosReducer(action){
         }
     }
 }
+
+//Shop Reducers
+function productsReducer(action) {}
+function articlesReducer(action) {}
+function ticketsReducer(action) {}
+function usersReducer(action) {}
+function adminsReducer(action) {}

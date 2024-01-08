@@ -1,0 +1,5 @@
+// console.log(Redux)
+const decBtn = document.getElementById('.dec')
+const resetBtn = document.getElementById('.reset')
+const incBtn = document.getElementById('.inc')
+const number = document.getElementById('#num')
