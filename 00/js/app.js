@@ -15,5 +15,8 @@ const counterReducer = (action)=>{
         case 'SET_ZERO':{
             
         }
+        default:{
+            
+        }
     }
 }
