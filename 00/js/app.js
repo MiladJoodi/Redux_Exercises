@@ -1,3 +1,5 @@
+import { counterIncrement, counterDecrement, counterSetZero } from "../Redux/actionTypes"
+
 const decBtn = document.querySelector('.dec')
 const resetBtn = document.querySelector('.reset')
 const incBtn = document.querySelector('.inc')
@@ -6,13 +8,13 @@ const numberElem = document.getElementById('num')
 //Declare Counter Reducer
 const counterReducer = (state = 0, action) => {
     switch (action.type) {
-        case 'INCREMENT': {
+        case counterIncrement: {
             return state + 1
         }
-        case 'DECREMENT': {
+        case counterDecrement: {
             return state - 1
         }
-        case 'SET_ZERO': {
+        case counterSetZero: {
             // return 0
             return state - state
         }
@@ -26,17 +28,17 @@ const store = Redux.createStore(counterReducer)
 
 //Handle Events
 decBtn.addEventListener('click', () => {
-    store.dispatch({type: 'DECREMENT'})
+    store.dispatch({ type: counterDecrement })
     let newValue = store.getState()
     numberElem.innerHTML = newValue
 })
 resetBtn.addEventListener('click', () => {
-    store.dispatch({type: 'SET_ZERO'})
+    store.dispatch({ type: counterSetZero })
     let newValue = store.getState()
     numberElem.innerHTML = newValue
 })
 incBtn.addEventListener('click', () => {
-    store.dispatch({type: 'INCREMENT'})
+    store.dispatch({ type: counterIncrement })
     let newValue = store.getState()
     numberElem.innerHTML = newValue
 })
