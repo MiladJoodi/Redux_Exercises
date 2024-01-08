@@ -1,7 +1,7 @@
-const decBtn = document.getElementById('.dec')
-const resetBtn = document.getElementById('.reset')
-const incBtn = document.getElementById('.inc')
-const numberElem = document.getElementById('#num')
+const decBtn = document.querySelector('.dec')
+const resetBtn = document.querySelector('.reset')
+const incBtn = document.querySelector('.inc')
+const numberElem = document.getElementById('num')
 
 //Declare Counter Reducer
 const counterReducer = (state = 0, action) => {
@@ -26,11 +26,15 @@ const store = Redux.createStore(counterReducer)
 
 //Handle Events
 decBtn.addEventListener('click', () => {
-
+    store.dispatch({type: 'DECREMENT'})
+    let newValue = store.getState()
+    numberElem.innerHTML = newValue
 })
 resetBtn.addEventListener('click', () => {
-
+    store.dispatch({type: 'DECREMENT'})
+        let newValue = store.getState()
 })
 incBtn.addEventListener('click', () => {
-
+    store.dispatch({type: 'DECREMENT'})
+        numberElem.innerHTML = newValue
 })
