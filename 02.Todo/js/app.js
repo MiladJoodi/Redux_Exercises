@@ -1,9 +1,9 @@
 import { addTodo, removeTodo, doTodo, filterAllTodos, filterCompletedTodos, filterIncompletedTodos } from "../Redux/actions.js"
 
+import {add}
+
 const todoInputElem = document.querySelector('.todo-input')
 const addTodoBtn = document.querySelector('.todo-button')
-
-
 
 // Create Todolist Reducer
 function todolistReducer(state = [], action){
