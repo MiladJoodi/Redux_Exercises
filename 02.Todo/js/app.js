@@ -10,6 +10,7 @@ import {
   import { addTodoAction,removeTodoAction } from "../Redux/actionCreators.js";
 
   window.removeTodoHandler = removeTodoHandler
+  window.doTodoHandler = doTodoHandler
   
   const todoInputElem = document.querySelector(".todo-input");
   const addTodoBtn = document.querySelector(".todo-button");
@@ -72,6 +73,10 @@ import {
     const todos = store.getState()
     generateTodosInDom(todos)
   }
+
+  function doTodoHandler(todoID){
+    console.log(todoID)
+  }
   
   function generateTodosInDom(todos) {
     todosContainer.innerHTML = "";
@@ -81,7 +86,7 @@ import {
         `
               <div class="todo ${todo.isCompleted && 'completed'}">
                   <li class="todo-item">${todo.title}</li>
-                  <button class="complete-btn">
+                  <button class="complete-btn" onclick=doTodoHandler("${todo.id}")>
                       <i class="fas fa-check-circle"></i>
                   </button>
                   <button class="trash-btn" onclick=removeTodoHandler("${todo.id}")>
