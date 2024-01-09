@@ -1,6 +1,6 @@
 import { addTodo, removeTodo, doTodo, filterAllTodos, filterCompletedTodos, filterIncompletedTodos } from "../Redux/actions.js"
 
-import {add}
+import { addTodoAction } from "../Redux/actionCreators.js"
 
 const todoInputElem = document.querySelector('.todo-input')
 const addTodoBtn = document.querySelector('.todo-button')
@@ -29,16 +29,18 @@ function todolistReducer(state = [], action){
         default:{
             return state
         }
-    }
+    } 
 }
 
 //Create Store
 const store = Redux.createStore(todolistReducer)
 console.log(store)
 
-addTodoBtn.addEventListener('click', event=> {
+addTodoBtn.addEventListener('click', (event)=> {
     event.preventDefault()
-    const newTodoTitle = todoInputElem.value.trim()
-    store.dispatch()
+    const newTodoTitle = todoInputElem.ariaValueMax.trim()
+    store.dispatch(addTodoAction(newTodoTitle))
     const todos = store.getState()
+    todoInputElem.value = ""
+    console.log(todos)
 })
