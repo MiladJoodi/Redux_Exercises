@@ -1,12 +1,55 @@
-import React, { useState } from "react";
-// import "./App.css";
+import React from "react";
+import './App.css'
+import { useState } from "react";
 
-export default function App() {
+function App() {
+
+  const [counter, setCounter] = useState(0);
+
+  const incrementHandler = () => {
+    setCounter(counter => counter + 1)
+  }
+  const decrementHandler = () => {
+    setCounter(counter => counter - 1)
+  }
+  const resetHandler = ()=>{
+    setCounter(counter-counter)
+
+  }
+
 
 
   return (
-    <div>
-      <h1 className="text-blue-300">Hello</h1>
+    <div class="flex flex-col items-center justify-center mt-44">
+      <div className="flex">
+
+        <button id="decrement-btn"
+        onClick={decrementHandler}
+          className="py-2.5 px-2.5 mt-4 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+          </svg>
+        </button>
+
+        <span id="counter" class="flex items-center text-4xl font-bold mx-4">{counter}</span>
+
+        <button id="increment-btn"
+        onClick={incrementHandler}
+        className="py-2.5 px-2.5 mt-4 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12M6 12h12"></path>
+          </svg>
+        </button>
+
+      </div>
+      <button type="button" onClick={resetHandler} className="py-2.5 px-5 mt-4 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">ریست</button>
+
     </div>
   );
 }
+
+export default App;
+
+
