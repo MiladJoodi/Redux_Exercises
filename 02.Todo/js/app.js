@@ -74,6 +74,17 @@ import {
     // console.log(todos);
   });
 
+  todoFilteringElem.addEventListener('click', event=>{
+    console.log(event.target.value)
+    if(event.target.value === "all"){
+
+    }else if(event.target.value === "completed"){
+
+    }else if(event.target.value === "incomplete"){
+
+    }
+  })
+
   function removeTodoHandler(todoID){
     // console.log(todoID)
     store.dispatch(removeTodoAction(todoID))
