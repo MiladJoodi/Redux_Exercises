@@ -7,7 +7,7 @@ import {
     filterIncompletedTodos,
   } from "../Redux/actions.js";
   
-  import { addTodoAction,removeTodoAction } from "../Redux/actionCreators.js";
+  import { addTodoAction,removeTodoAction, doTodoAction } from "../Redux/actionCreators.js";
 
   window.removeTodoHandler = removeTodoHandler
   window.doTodoHandler = doTodoHandler
@@ -36,6 +36,8 @@ import {
         return newState;
       }
       case doTodo: {
+        let copyState = [...state]
+        
         return state;
       }
       case filterAllTodos: {
@@ -76,6 +78,9 @@ import {
 
   function doTodoHandler(todoID){
     console.log(todoID)
+    store.dispatch(doTodoAction(todoID))
+    const todos = store.getState()
+    generateTodosInDom(todos)
   }
   
   function generateTodosInDom(todos) {
