@@ -37,9 +37,9 @@ import {
       }
       case doTodo: {
         let newState = [...state]
-        newState.some(todo=>{
+        newState.some((todo)=>{
             if(todo.id === action.id){
-                todo.isCompleted !=todo.isCompleted
+                todo.isCompleted = !todo.isCompleted
             }
         })
         return newState;
@@ -61,7 +61,7 @@ import {
   
   // Create Store
   const store = Redux.createStore(todolistReducer);
-  console.log(store);
+//   console.log(store);
   
   addTodoBtn.addEventListener("click", (event) => {
     event.preventDefault();
@@ -70,21 +70,20 @@ import {
     const todos = store.getState();
     todoInputElem.value = "";
     generateTodosInDom(todos);
-    console.log(todos);
+    // console.log(todos);
   });
 
   function removeTodoHandler(todoID){
-    console.log(todoID)
+    // console.log(todoID)
     store.dispatch(removeTodoAction(todoID))
     const todos = store.getState()
     generateTodosInDom(todos)
   }
 
-  function doTodoHandler(todoID){
-    console.log(todoID)
-    store.dispatch(doTodoAction(todoID))
-    const todos = store.getState()
-    generateTodosInDom(todos)
+  function doTodoHandler(todoID) {
+    store.dispatch(doTodoAction(todoID));
+    const todos = store.getState();
+    generateTodosInDom(todos);
   }
   
   function generateTodosInDom(todos) {
@@ -93,7 +92,7 @@ import {
       todosContainer.insertAdjacentHTML(
         "beforeend",
         `
-              <div class="todo ${todo.isCompleted && 'completed'}">
+                <div class="todo ${todo.isCompleted && "completed"}">
                   <li class="todo-item">${todo.title}</li>
                   <button class="complete-btn" onclick=doTodoHandler("${todo.id}")>
                       <i class="fas fa-check-circle"></i>
