@@ -9,7 +9,17 @@ const addTodoBtn = document.querySelector('.todo-button')
 function todolistReducer(state = [], action){
     switch(action.type){
         case addTodo:{
-            return state
+            console.log(action)
+            let newState = [...state]
+            let newTodoObj = {
+                id: crypto.randomUUID(),
+                title: action.title,
+                isCompleted: false
+            }
+
+            newState.push(newTodoObj)
+
+            return newState
         }
         case removeTodo:{
             return state
@@ -38,9 +48,14 @@ console.log(store)
 
 addTodoBtn.addEventListener('click', (event)=> {
     event.preventDefault()
-    const newTodoTitle = todoInputElem.ariaValueMax.trim()
+    const newTodoTitle = todoInputElem.value.trim()
     store.dispatch(addTodoAction(newTodoTitle))
     const todos = store.getState()
     todoInputElem.value = ""
+    generateTodosInDom(todos)
     console.log(todos)
 })
+
+function generateTodosInDom (todos){
+    
+}
