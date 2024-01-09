@@ -36,9 +36,13 @@ import {
         return newState;
       }
       case doTodo: {
-        let copyState = [...state]
-        
-        return state;
+        let newState = [...state]
+        newState.some(todo=>{
+            if(todo.id === action.id){
+                todo.isCompleted !=todo.isCompleted
+            }
+        })
+        return newState;
       }
       case filterAllTodos: {
         return state;
