@@ -4,11 +4,12 @@ import { addTodoAction } from "../Redux/actionCreators.js"
 
 const todoInputElem = document.querySelector('.todo-input')
 const addTodoBtn = document.querySelector('.todo-button')
+const todosContainer = document.querySelector('.todo-list')
 
 // Create Todolist Reducer
-function todolistReducer(state = [], action){
-    switch(action.type){
-        case addTodo:{
+function todolistReducer(state = [], action) {
+    switch (action.type) {
+        case addTodo: {
             console.log(action)
             let newState = [...state]
             let newTodoObj = {
@@ -21,41 +22,48 @@ function todolistReducer(state = [], action){
 
             return newState
         }
-        case removeTodo:{
+        case removeTodo: {
             return state
         }
-        case doTodo:{
+        case doTodo: {
             return state
         }
-        case filterAllTodos:{
+        case filterAllTodos: {
             return state
         }
-        case filterCompletedTodos:{
+        case filterCompletedTodos: {
             return state
         }
-        case filterIncompletedTodos:{
+        case filterIncompletedTodos: {
             return state
         }
-        default:{
+        default: {
             return state
         }
-    } 
+    }
 }
 
 //Create Store
 const store = Redux.createStore(todolistReducer)
 console.log(store)
 
-addTodoBtn.addEventListener('click', (event)=> {
-    event.preventDefault()
-    const newTodoTitle = todoInputElem.value.trim()
-    store.dispatch(addTodoAction(newTodoTitle))
-    const todos = store.getState()
-    todoInputElem.value = ""
-    generateTodosInDom(todos)
-    console.log(todos)
+addTodoBtn.addEventListener('click', (event) => {
+    console.log('first')
 })
 
-function generateTodosInDom (todos){
-    
+function generateTodosInDom(todos) {
+    todosContainer.innerHTML = "";
+    todos.forEach((todo) => {
+        todosContainer.insertAdjacentHTML('beforeend', `
+        <div class="todo">
+            <li class="todo-item">${todos.title}</li>
+            <button class="complete-btn">
+            <i class="fas fa-check-circle"></i>
+            </button>
+            <button class="trash-btn">
+            <i class="fas fa-trash"></i>
+            </button>
+        </div>
+        `)
+    })
 }
