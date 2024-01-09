@@ -79,7 +79,7 @@ import {
       todosContainer.insertAdjacentHTML(
         "beforeend",
         `
-              <div class="todo">
+              <div class="todo ${todo.isCompleted && 'completed'}">
                   <li class="todo-item">${todo.title}</li>
                   <button class="complete-btn">
                       <i class="fas fa-check-circle"></i>
