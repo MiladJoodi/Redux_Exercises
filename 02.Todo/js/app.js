@@ -15,7 +15,8 @@ import {
   const todoInputElem = document.querySelector(".todo-input");
   const addTodoBtn = document.querySelector(".todo-button");
   const todosContainer = document.querySelector(".todo-list");
-  
+  const todoFilteringElem = document.querySelector('.filter-todo')
+
   // Create Todolist Reducer
   function todolistReducer(state = [], action) {
     switch (action.type) {

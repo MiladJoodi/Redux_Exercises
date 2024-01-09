@@ -30,6 +30,11 @@ const filterCompletedTodosAction = () => {
         type: filterCompletedTodos,
     }
 }
+const filterIncompletedTodosAction = () => {
+    return {
+        type: filterIncompletedTodos,
+    }
+}
 
 
 
@@ -37,5 +42,7 @@ export {
     addTodoAction,
     removeTodoAction,
     doTodoAction,
-
+    filterAllTodos,
+    filterCompletedTodosAction,
+    filterIncompletedTodosAction
 } 
