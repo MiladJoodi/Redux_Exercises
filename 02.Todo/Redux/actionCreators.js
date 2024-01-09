@@ -19,12 +19,6 @@ const doTodoAction = (id)=>{
         id
     }
 }
-// const filterAllTodos = (value)=>{
-//     return{
-//         type: addTodo,
-//         title: value
-//     }
-// }
 
 export{
     addTodoAction,
