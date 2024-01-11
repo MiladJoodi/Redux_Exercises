@@ -3,8 +3,16 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 
+import store from './redux/store.js'
+import { counterIncrement, counterDecrement } from './redux/actionTypes.js'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <App 
+    counter={store.getState()} 
+    onIncrement={()=> store.dispatch(counterIncrement)}
+    onDecrement={()=> store.dispatch(counterDecrement)}
+    
+    />
   </React.StrictMode>,
 )
