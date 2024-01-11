@@ -1,4 +1,4 @@
-import { counterIncrement, counterDecrement } from "./actionTypes"
+import { counterIncrement, counterDecrement, counterRestart } from "./actionTypes"
 
 const reducer = (state=0, action)=>{
     switch(action.type){
@@ -7,6 +7,9 @@ const reducer = (state=0, action)=>{
         }
         case counterDecrement:{
             return state - 1
+        }
+        case counterRestart:{
+            return 0;
         }
         default:{
             return state

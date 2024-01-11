@@ -2,19 +2,7 @@ import React from "react";
 import './App.css'
 import { useState } from "react";
 
-function App({counter, onIncrement, onDecrement}) {
-
-  const incrementHandler = () => {
-    setCounter(counter => counter + 1)
-  }
-  const decrementHandler = () => {
-    setCounter(counter => counter - 1)
-  }
-  const resetHandler = ()=>{
-    setCounter(counter-counter)
-
-  }
-
+function App({counter, onIncrement, onDecrement, onRestart}) {
 
 
   return (
@@ -22,7 +10,7 @@ function App({counter, onIncrement, onDecrement}) {
       <div className="flex">
 
         <button id="decrement-btn"
-        onClick={onDecrement}
+        onClick={onIncrement}
           className="py-2.5 px-2.5 mt-4 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
