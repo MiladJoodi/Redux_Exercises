@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-function Products() {
+function Products(props) {
   return (
     <ul>
         Product List:
@@ -11,4 +11,9 @@ function Products() {
   )
 }
 
-export default connect()(Products);
+function mapStateToProps(state){
+    console.log('store', state);
+    return {}
+}
+
+export default connect(mapStateToProps)(Products);

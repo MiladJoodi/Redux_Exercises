@@ -6,9 +6,9 @@ import articlesReducer from './store/Products'
 import commentReducer from './store/Products'
 
 const store = legacy_createStore(combineReducers({
-    productReducer,
-    articlesReducer,
-    commentReducer,
+    products: productReducer,
+    articles: articlesReducer,
+    comments: commentReducer,
 }))
 
 export default store;
