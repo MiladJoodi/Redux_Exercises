@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'vazir';
+    src: url('../public/fonts/vazir.ttf') format('eot');
+    src : url('../public/fonts/vazir.ttf') format('truetype'),
+    url('../public/fonts/vazir.woff') format('woff');
+}
+
+*{
+    font-family: 'vazir';
+}
