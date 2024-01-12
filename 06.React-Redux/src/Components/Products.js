@@ -1,8 +1,14 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-export default function Products() {
+function Products() {
   return (
-    <div>Products</div>
+    <ul>
+        Product List:
+        <li>Product 1</li>
+        <li>Product 2</li>
+    </ul>
   )
 }
+
+export default connect()(Products);
