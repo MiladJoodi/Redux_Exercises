@@ -4,10 +4,10 @@
   text-decoration: none;
   list-style: none;
   outline: none;
+  font-family: 'vazir' !important;
 }
 body {
   direction: rtl;
-  font-family: 'vazir' !important;
 }
 
 nav{

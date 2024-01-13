@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from './Navbar'
+ import Navbar from './Navbar'
 import { Data } from '../data';
 import formatCurrency from '../util';
 import {useSelector, useDispatch} from 'react-redux';
@@ -7,6 +7,7 @@ import {useSelector, useDispatch} from 'react-redux';
 function Products() {
 
      const cart = useSelector((store) => store);
+     console.log(cart);
      const dispatch = useDispatch();
 
      return (
@@ -25,7 +26,7 @@ function Products() {
                                              </div>
 
                                              <div className="add-to-cart">
-                                               <button>افزودن به سبد خرید</button>
+                                               <button onClick={()=> dispatch({type: "ADD", payload: item})}>افزودن به سبد خرید</button>
                                              </div>
                                         </div>
                                        
