@@ -11,7 +11,7 @@ export default function App() {
 
   const addTodoHandler = (event) => {
     event.preventDefault();
-    dispatch(addTodo({id: crypto.randomUUID(),title, isDone: false}));
+    dispatch(addTodo({ id: crypto.randomUUID(), title, isDone: false }));
     setTitle("");
   };
 
@@ -28,7 +28,7 @@ export default function App() {
           onChange={(event) => setTitle(event.target.value)}
         />
         <button className="todo-button" type="submit" onClick={addTodoHandler}>
-          <i className="fas fa-plus-circle fa-lg">Submit</i>
+          <i className="fas fa-plus-circle fa-lg"></i>
         </button>
         <div className="select">
           <select name="todos" className="filter-todo">
