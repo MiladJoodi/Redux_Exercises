@@ -5,13 +5,14 @@ import { useState } from "react";
 import { Provider } from "react";
 import store from "./store";
 
+import Counter from "./Counter";
+
 function App() {
   return (
-    <Provider store={store}>
     <div className="App">
       Redux Toolkit
+      <Counter />
     </div>
-    </Provider>
   );
 }
 
