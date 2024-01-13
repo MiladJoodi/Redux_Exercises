@@ -4,7 +4,7 @@ const removeTodo = "REMOVE_TODO"
 const doTodo = "DO_TODO"
 
 //Reducer
-export default function reducer(state = [], action){
+export default function reducer(state = [{id: 0, title: "fake todo"}], action){
     switch(action.type){
         case addTodo:{
             return [...state, action.payload]

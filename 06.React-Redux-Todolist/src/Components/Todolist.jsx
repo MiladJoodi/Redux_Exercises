@@ -1,13 +1,13 @@
 import React from 'react'
-import Todo from ".Todo"
+import Todo from "./Todo"
 import { connect } from 'react-redux'
 
 function Todolist({ todos }) {
     return (
         <>
             {
-                todos.map(todo => (
-                    <Todo key={todo.d} {...todo} />
+                todos.map((todo) => (
+                    <Todo key={todo.id} {...todo} />
                 ))
             }
         </>
