@@ -1,35 +1,23 @@
-import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-export const fetchPosts = createAsyncThunk('posts/fetch', 
-async ()=>{
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts')
-    const data = await response.json();
+import { fetchPosts } from './postSlice'
 
-    return data;
-})
+export default function PostList () {
+  const dispatch = useDispatch()
+  const postList = useSelector(({ posts: { postList } }) => postList)
 
-initialStati = {
-    postList: [],
-    fetchingPost: false,
-    errorMessage: null
+  useEffect(() => {
+    dispatch(fetchPosts())
+  }, [dispatch])
+
+  return (
+    <div>
+      {postList.map(post => (
+        <div style={{ margin: 20 }} key={post.id}>
+          {post.body}
+        </div>
+      ))}
+    </div>
+  )
 }
-
-const postSlice = createSlice({
-    name: 'posts',
-    initialState,
-    extraReducers:{
-        [fetchPosts.fulfilled]: (state, action)=> {
-            state.postList = action.payload
-            state.fetchingPost = false
-        },
-        [fetchPosts.pending]: (state)=> {
-            state.fetchingPost = true
-        },
-        [fetchPosts.rejected]: (state)=>{
-            state.fetchingPost = false,
-            state.errorMessage = "ُsomething went wrong"
-        }
-    }
-})
-
-export default postSlice.reducer;

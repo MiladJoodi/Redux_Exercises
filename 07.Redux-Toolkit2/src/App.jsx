@@ -1,23 +1,19 @@
-import React from "react";
-import './App.css'
-import { useState } from "react";
+import { Provider } from 'react-redux'
+import store from './store'
 
-import store from "./store";
+import Counter from './Counter'
+import PostList from './PostList'
 
-import Counter from "./Counter";
-import { Provider } from "react-redux";
-
-function App() {
+function App () {
   return (
     <Provider store={store}>
-    <div className="App">
-      <h1>Redux Toolkit</h1>
-      <Counter />
-    </div>
+      <div className='App'>
+        <h1>Redux Toolkit</h1>
+        <Counter />
+        <PostList  />
+      </div>
     </Provider>
-  );
+  )
 }
 
-export default App;
-
-
+export default App
