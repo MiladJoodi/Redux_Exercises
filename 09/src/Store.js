@@ -1,19 +1,22 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
 
-const useSlice  = createSlice({
-     name: "user",
-     initialState: {username: ""},
-     reducers:{
-        login: (state, action)=> { // {username: "Sarvin"}
-                state.username = action.payload.username
+const userSlice = createSlice({
+    name: "user",
+    initialState: { username: "" },
+    reducers: {
+        login: (state, action) => { // {username: "Sarvin"}
+            state.username = action.payload.username
         },
-        logout: ()=>{
-
+        logout: (state) => {
+            state.username = ""
         }
-     }
+    }
 })
 
-const store = configureStore({
-    reducer:
+export const { login, logout } = userSlice.actions
+export const store = configureStore({
+    reducer: {
+        user: userSlice.reducer
+    }
 
 })
