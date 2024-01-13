@@ -4,9 +4,9 @@ const useSlice  = createSlice({
      name: "user",
      initialState: {username: ""},
      reducers:{
-        login: ()=> {
-
-        }
+        login: (state, action)=> { // {username: "Sarvin"}
+                state.username = action.payload.username
+        },
         logout: ()=>{
 
         }
