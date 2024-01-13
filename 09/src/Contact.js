@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux"
 
 export const Contact =() =>{
-    const seletore = useSelector((state)=> state.user)
+    const selector = useSelector((state)=> state.user)
     return(
-        <div>Contact {seletore.username}</div>
+        <div>Contact {selector.username}</div>
     )
 }
