@@ -1,11 +1,15 @@
 import { createAction } from "@reduxjs/toolkit";
 
-export const addTodo = createAction("ADD_TODO")
-export const removeTodo = createAction("REMOVE_TODO")
-export const doTodo = createAction("DO_TODO")
+const addTodoAct = createAction("ADD_TODO")
+const removeTodoAct = createAction("REMOVE_TODO")
+const doTodo = createAction('DO_TODO')
 
-console.log(removeTodo({id: 1})) 
+console.log(removeTodoAct.type)
 
+//Actions
+export const addTodo = createAction("ADD_TODO");
+export const removeTodo = createAction("REMOVE_TODO");
+export const doTodo = createAction("DO_TODO");
 
 // Reducer
 export default function reducer(state = [], action) {
