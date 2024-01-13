@@ -1,0 +1,118 @@
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+}
+body {
+  direction: rtl;
+  font-family: 'vazir' !important;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 200px;
+  background: crimson;
+  color: #fff;
+}
+nav a{
+  color: #fff;
+  font-size: 25px;
+}
+
+.products{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.products .product-item{
+  width: calc(33.33% - 20px);
+  box-shadow: 0 0 10px rgba(117,117,117,.2);
+  margin-top: 30px;
+}
+
+.products .product-item img{
+  width: 100%;
+}
+
+.products .product-item .product-item-text{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.products .product-item .product-item-text .add-to-cart button{
+  background: rgb(16, 185, 86);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+
+
+
+.cart{
+ 
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.cart .cart-item{
+  width: 100%;
+  box-shadow: 0 0 10px rgba(117,117,117,.2);
+  margin-top: 30px;
+  display: flex;
+}
+
+.cart .cart-item img{
+  width: 400px;
+}
+
+.cart .cart-item .cart-item-text{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.cart .cart-item .cart-item-text .cart-item-info h4{
+  font-size: 30px;
+  border-bottom: 1px solid rgb(212, 212, 212);
+  padding-bottom: 20px;
+}
+.cart .cart-item .cart-item-text .cart-item-info h5{
+  font-size: 20px;
+  margin-top: 20px;
+}
+.cart .cart-item  button{
+  background: crimson;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 4px 10px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.cart .cart-item span{
+  padding: 0 10px;
+}
+
+.total{
+  text-align: center;
+  font-size: 25px;
+  background: crimson;
+  color: #fff;
+  padding: 50px 0;
+}
