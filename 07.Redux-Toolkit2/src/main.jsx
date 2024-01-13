@@ -11,4 +11,3 @@ const render = ()=> root.render(
   </React.StrictMode>,
 )
 render()
-store.subscribe(render)
