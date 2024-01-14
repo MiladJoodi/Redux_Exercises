@@ -7,8 +7,14 @@ export const userSlice = createSlice({
         children: ["maryam", "mohammad"],
     },
     reducers: {
-        addChildren: ()=>{
+        addChildren: (state, actions)=>{
+            if(state.children){
 
+            }else{
+                
+            }
+
+            state.children = [...state.children, actions.payload]
         }
     }
 })
