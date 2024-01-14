@@ -5,9 +5,20 @@ function DownBox3() {
 
     const counter = useSelector((state)=> state.counter.value)
 
+    const userChildren = useSelector(state=> state.user.children)
+
+    console.log(userChildren)
+
   return (
     <div>
-        <h5>downbox 3</h5>
+        <h5>Down box 3</h5>
+
+        {
+        userChildren.map((child)=> <h3>{child}</h3>)
+        }
+
+        <br />
+
         <h1>counter: {counter}</h1>
     </div>
   )
