@@ -16,6 +16,11 @@ function Box3() {
         <button onClick={()=>dispatch(counterSlice.actions.increment())}>Increment</button>
         <br />
         <button onClick={()=>dispatch(counterSlice.actions.decrement())}>Decrement</button>
+
+        <br />
+
+        <button onClick={()=>dispatch(counterSlice.actions.incrementByAmount({amount: 2, qty: 4}))}>IncrementByAmount</button>
+
         <p>counter: {counter}</p>
     </div>
   )
