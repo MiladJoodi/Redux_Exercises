@@ -8,6 +8,7 @@ import counterReducer from './counterSlice'
 export const store = configureStore({
   reducer: {
     counter: counterSlice.reducer,
-    user: userSlice.reducer
+    user: userReducer
+    // user: userSlice.reducer
   },
 })
