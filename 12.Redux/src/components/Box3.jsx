@@ -1,6 +1,6 @@
 import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import { counterSlice } from '../redux/counterSlice'
+import { counterSlice, decrement, increment, incrementByAmount } from '../redux/counterSlice'
 
 function Box3() {
 
@@ -13,13 +13,16 @@ function Box3() {
     <div>
         <h5>Box3</h5>
         <br />
-        <button onClick={()=>dispatch(counterSlice.actions.increment())}>Increment</button>
+        <button onClick={()=>dispatch(increment())}>Increment</button>
+        {/* <button onClick={()=>dispatch(counterSlice.actions.increment())}>Increment</button> */}
         <br />
-        <button onClick={()=>dispatch(counterSlice.actions.decrement())}>Decrement</button>
+        <button onClick={()=>dispatch(decrement())}>Decrement</button>
+        {/* <button onClick={()=>dispatch(counterSlice.actions.decrement())}>Decrement</button> */}
 
         <br />
 
-        <button onClick={()=>dispatch(counterSlice.actions.incrementByAmount({amount: 2, qty: 4}))}>IncrementByAmount</button>
+        <button onClick={()=>dispatch(incrementByAmount({amount: 2, qty: 4}))}>IncrementByAmount</button>
+        {/* <button onClick={()=>dispatch(counterSlice.actions.incrementByAmount({amount: 2, qty: 4}))}>IncrementByAmount</button> */}
 
         <p>counter: {counter}</p>
     </div>

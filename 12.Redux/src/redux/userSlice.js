@@ -14,3 +14,4 @@ export const userSlice = createSlice({
 })
 
 export const { addChildren } = userSlice.actions
+export default userSlice.reducer;

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { userSlice } from '../../redux/userSlice'
+import { addChildren } from '../../redux/userSlice'
 
 function DownBox3() {
 
@@ -16,7 +16,8 @@ function DownBox3() {
     <div>
         <h5>Down box 3</h5>
 
-        <button onClick={()=>dispatch(userSlice.actions.addChildren(["senko", "korom"]))}>add children</button>
+        <button onClick={()=>dispatch(addChildren(["senko", "korom"]))}>add children</button>
+        {/* <button onClick={()=>dispatch(userSlice.actions.addChildren(["senko", "korom"]))}>add children</button> */}
 
         {
         userChildren.map((child)=> <h3>{child}</h3>)
