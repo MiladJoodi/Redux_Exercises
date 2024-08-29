@@ -3,7 +3,7 @@
 ### Cover:
 ![](https://s31.picofile.com/file/8471388218/redux_todo.jpg)
 
-This t 5emplate provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This t 5emplate provides a minimal setup to get React working in Vite with HMR and some ESLint rules
 
 Currently, two official plugins are available:
 
